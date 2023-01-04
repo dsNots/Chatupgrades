@@ -87,6 +87,11 @@ Little did I know, an epic tale had unfolded in the past weeks. I had found out 
 I hear the sound of footsetps approaching from behind. I turn to see a blurry figure, my eyes still caked with morning gunk. The figure is carrying a loaf of bread and water, which both delighted and repulsed my empty, queezy stomach. I open my eye's a bit more, trying to get a better picture of my surroundings. In a desperate sounding tone, almost like a plea for help, I said: `)
 
 
+let numWords = conversation.reduce((acc, curr) => {
+    return acc + curr.split(' ').length;
+}, 0);
+
+
 
 // check the length of the conversation array
 if (numWords > 1500) {
@@ -121,16 +126,6 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
-
-
-    let numWords = conversation.reduce((acc, curr) => {
-        return acc + curr.split(' ').length;
-    }, 0);
-
-    console.log(numWords); // Output: 6
-
-
-
 
     const response = await fetch('https://ai-story.onrender.com', {
         method: 'POST',
@@ -178,3 +173,4 @@ form.addEventListener('keyup', (e) => {
         handleSubmit(e)
     }
 })
+console.log(numWords); // Output: 6
