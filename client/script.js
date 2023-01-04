@@ -141,7 +141,7 @@ const handleSubmit = async (e) => {
     })
 
     console.log('Received response:', response)
-    console.log(numWords.length)
+    console.log(numWords)
 
 
 
