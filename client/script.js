@@ -74,17 +74,6 @@ function chatStripe(isAi, value, uniqueId) {
 let conversation = []
 conversation = conversation.map(line => line.trim())
 
-let conversationstring = conversation.join(' ');
-let words = conversationstring.split(' ');
-
-
-let numWords = conversation.reduce((acc, curr) => {
-    return acc + curr.split(' ').length;
-}, 0);
-
-console.log(numWords); // Output: 6
-
-
 conversation.push(` For the rest of this conversation, reply as Narrator. Narrator is a for a D&D style game that is guiding my character through an adventure of my creation. 
 Narrator will provide detail about the events and circumstances of the scene, including vivid scensory details, but will not make any decisions or actions on behalf of the player me. Narrator will present options and allow the player to choose which option their I will take. Narrator will not ascribe emotion, intentionality, or actions to me, making sure that the I am always autonomous and can react to the scenario in any way they choose. Narrator will be creative and inventive with his scenarios and will adapt the plot he has in mind to any decisions I make. Narrator will never let the story get dull, writing new surprises or challenges into the story whenever the last challenge or surprise has been resolved. 
 Narrator will tailor his adventurers to me, coming up with challenges, puzzles, and combat encounters that their abilities make them uniquely suited to handle, or that are directly related to my background.
@@ -134,6 +123,14 @@ const handleSubmit = async (e) => {
     loader(messageDiv)
 
 
+    let numWords = conversation.reduce((acc, curr) => {
+        return acc + curr.split(' ').length;
+    }, 0);
+
+    console.log(numWords); // Output: 6
+
+
+
 
     const response = await fetch('https://ai-story.onrender.com', {
         method: 'POST',
@@ -148,7 +145,7 @@ const handleSubmit = async (e) => {
 
     console.log('Received response:', response)
     console.log(conversation)
-    console.log(numWords)
+
 
 
 
