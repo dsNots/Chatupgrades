@@ -155,6 +155,7 @@ const handleSubmit = async (e) => {
         const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
         typeText(messageDiv, parsedData)
         conversation.push(parsedData) // Add bot's response to conversation log
+
     } else {
         const err = await response.text()
 
@@ -162,6 +163,7 @@ const handleSubmit = async (e) => {
         alert(err)
     }
 
+    console.log(numWords); // Output: 6
 
 
 
@@ -173,4 +175,3 @@ form.addEventListener('keyup', (e) => {
         handleSubmit(e)
     }
 })
-console.log(numWords); // Output: 6
