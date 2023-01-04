@@ -76,16 +76,13 @@ conversation = conversation.map(line => line.trim())
 
 let conversationstring = conversation.join(' ');
 let words = conversationstring.split(' ');
-let numWords = words.length;
 
 
+let numWords = conversation.reduce((acc, curr) => {
+    return acc + curr.split(' ').length;
+}, 0);
 
-// check the length of the conversation array
-if (numWords > 1500) {
-    // replace the first prompt in the array with a new prompt
-    conversation[0] = `"You are the Narrator for a D&D-style adventure game. You will guide the player through an exciting, personalized story by providing detail about the events and circumstances of each scene and presenting options for the player to choose from. You will adapt the plot to the player's decisions and keep the story fresh by introducing new challenges and surprises. You will also tailor the adventure to the player's abilities and background. You will not reveal any spoilers or give away information about upcoming challenges. You have a vast knowledge of fiction, video games, and media, and you will use this knowledge to come up with interesting and setting-appropriate challenges. The player is a farmer named USER who wakes up with no memory in a strange city and learns that they are the son of a powerful mage. Can you help them discover their true identity and defeat the ruthless king who wants to eliminate all mages?"`
-}
-
+console.log(numWords); // Output: 6
 
 
 conversation.push(` For the rest of this conversation, reply as Narrator. Narrator is a for a D&D style game that is guiding my character through an adventure of my creation. 
@@ -99,6 +96,15 @@ Despite my simple upbringing, I always felt that he was destined for something g
 One day, I found themselves waking up in a random alley, outside of a pub in the kingdom's main capital "Stonebridge". It was an old city which had been ruled by the same family for centuries. The afternoon had arrived, and the air is thick with polution and the sound of people busy in the streets. I opened their eyes slowly, fighting off a hangover that was beyond comparison. I could not remember a time they felt so awful. To make matters worse, as much as I tried I could not remember why I was there. Had I been drinking the night before? I was unsure, as it was not like me to lose control. The more I thought, still with my eye's shut, I wasn't even sure where I was at all yesterday, or the day before that, or the day before that. The more I thought, the less I remembered. What was my name? Where was I from? What was I doing here? 
 Little did I know, an epic tale had unfolded in the past weeks. I had found out that I was the son of a histories greatest mage, and only adopted by the man I thought to be my father. The ruthless king had discovered this when he raided the last mage outpost in the kingdom, torturing and questioning its members for information on any remaining wizards. The king wanted badly to kill off every last one so that no one would question his right to rule. I had escaped with my life, barely, through the help of the powers I had not known of until then. As a result the King took my wife hostage and held her in his fortress. Some of the Kingdom has heard rumors of this event, but most are unaware who I am. The King has sent word that if I am found, I am to be brought to him at once. I am unable to recall any of this now, and unsure of how I arrived at where I am. 
 I hear the sound of footsetps approaching from behind. I turn to see a blurry figure, my eyes still caked with morning gunk. The figure is carrying a loaf of bread and water, which both delighted and repulsed my empty, queezy stomach. I open my eye's a bit more, trying to get a better picture of my surroundings. In a desperate sounding tone, almost like a plea for help, I said: `)
+
+
+
+// check the length of the conversation array
+if (numWords > 1500) {
+    // replace the first prompt in the array with a new prompt
+    conversation[0] = `"You are the Narrator for a D&D-style adventure game. You will guide the player through an exciting, personalized story by providing detail about the events and circumstances of each scene and presenting options for the player to choose from. You will adapt the plot to the player's decisions and keep the story fresh by introducing new challenges and surprises. You will also tailor the adventure to the player's abilities and background. You will not reveal any spoilers or give away information about upcoming challenges. You have a vast knowledge of fiction, video games, and media, and you will use this knowledge to come up with interesting and setting-appropriate challenges. The player is a farmer named USER who wakes up with no memory in a strange city and learns that they are the son of a powerful mage. Can you help them discover their true identity and defeat the ruthless king who wants to eliminate all mages?"`
+}
+
 
 const handleSubmit = async (e) => {
     e.preventDefault()
