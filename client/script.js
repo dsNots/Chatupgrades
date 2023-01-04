@@ -87,11 +87,6 @@ Little did I know, an epic tale had unfolded in the past weeks. I had found out 
 I hear the sound of footsetps approaching from behind. I turn to see a blurry figure, my eyes still caked with morning gunk. The figure is carrying a loaf of bread and water, which both delighted and repulsed my empty, queezy stomach. I open my eye's a bit more, trying to get a better picture of my surroundings. In a desperate sounding tone, almost like a plea for help, I said: `)
 
 
-let numWords = conversation.reduce((acc, curr) => {
-    return acc + curr.split(' ').length;
-}, 0);
-console.log(numWords); // Output: 6
-
 
 
 
@@ -102,6 +97,15 @@ const handleSubmit = async (e) => {
 
     // Add user's input to conversation log
     const prompt1 = conversation.push('USER: ' + data.get('prompt') + ', ')
+
+    let numWords = conversation.reduce((acc, curr) => {
+        return acc + curr.split(' ').length;
+    }, 0);
+    console.log(numWords); // Output: 6
+
+
+
+
 
     // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, 'USER: ' + data.get('prompt'))
