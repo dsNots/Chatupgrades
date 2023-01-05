@@ -8,6 +8,7 @@ const chatContainer = document.querySelector('#chat_container')
 
 
 let loadInterval
+document.addEventListener('DOMContentLoaded', removeOverlay);
 
 
 function removeOverlay() {
