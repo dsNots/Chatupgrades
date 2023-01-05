@@ -12,13 +12,14 @@ let loadInterval
 
 function removeOverlay() {
     console.log('Before: ', document.querySelector('.overlay').classList);
-    document.querySelector('.overlay').classList.add('overlay-exit');
+    setTimeout(() => {
+        document.querySelector('.overlay').classList.add('overlay-exit');
+    }, 30000);
     console.log('After: ', document.querySelector('.overlay').classList);
 }
 
 
-setTimeout(removeOverlay, 30000);
-console.log(setTimeout)
+
 
 function loader(element) {
     element.textContent = ''
