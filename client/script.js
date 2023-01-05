@@ -11,10 +11,9 @@ let loadInterval
 
 
 function removeOverlay() {
-
+    console.log('Before: ', document.querySelector('.overlay').classList);
     document.querySelector('.overlay').classList.add('overlay-exit');
-    console.log(removeOverlay)
-
+    console.log('After: ', document.querySelector('.overlay').classList);
 }
 
 
