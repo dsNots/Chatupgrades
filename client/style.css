@@ -190,17 +190,17 @@ form img {
 }
 
 .overlay-exit {
-  animation: slideOut 1s forwards;
+  animation: slideOut 20s forwards;
 }
 
 @keyframes slideOut {
 
   from {
-    transform: translate(0);
+    transform: translateY(0);
 
   }
 
   to {
-    transform: translate(-100%)
+    transform: translateY(-100%)
   }
 }
