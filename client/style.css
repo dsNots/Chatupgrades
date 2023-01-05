@@ -190,7 +190,7 @@ form img {
 }
 
 .overlay-exit {
-  animation: slideOut 20s forwards;
+  animation: slideOut 30s forwards;
 }
 
 @keyframes slideOut {

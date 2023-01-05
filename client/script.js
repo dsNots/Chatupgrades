@@ -11,11 +11,15 @@ let loadInterval
 
 
 function removeOverlay() {
+
     document.querySelector('.overlay').classList.add('overlay-exit');
+    console.log(removeOverlay)
+
 }
 
 
-setTimeout(removeOverlay, 10000);
+setTimeout(removeOverlay, 30000);
+console.log(setTimeout)
 
 function loader(element) {
     element.textContent = ''
