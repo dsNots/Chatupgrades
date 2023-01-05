@@ -188,3 +188,19 @@ form img {
     transform: translateY(-100%);
   }
 }
+
+.overlay-exit {
+  animation: slideOut 1s forwards;
+}
+
+@keyframes slideOut {
+
+  from {
+    transform: translate(0);
+
+  }
+
+  to {
+    transform: translate(-100%)
+  }
+}

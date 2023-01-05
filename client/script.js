@@ -9,9 +9,20 @@ const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
 
+function removeOverlay() {
+    document.querySelector('.overlay').classList.add('overlay-exit');
+}
+
+setTimeout(removeOverlay, 10000);
+console.log(setTimeout)
+
+console.log(setTimeout);
+
 setTimeout(function () {
-    document.querySelector(".overlay").remove();
-}, 1000); // 5000 milliseconds = 5 seconds
+    console.log('This is a log message');
+}, 10000);
+
+
 
 
 function loader(element) {
@@ -130,7 +141,7 @@ const handleSubmit = async (e) => {
     // check the length of the conversation array
     if (numWords > 1500) {
         // replace the first prompt in the array with a new prompt
-        conversation[0] = `"You are the Narrator for a D&D-style adventure game. You will guide the player through an exciting, personalized story by providing detail about the events and circumstances of each scene and presenting options for the player to choose from. You will adapt the plot to the player's decisions and keep the story fresh by introducing new challenges and surprises. You will also tailor the adventure to the player's abilities and background. You will not reveal any spoilers or give away information about upcoming challenges. You have a vast knowledge of fiction, video games, and media, and you will use this knowledge to come up with interesting and setting-appropriate challenges. The player is a farmer named USER who wakes up with no memory in a strange city and learns that they are the son of a powerful mage. Can you help them discover their true identity and defeat the ruthless king who wants to eliminate all mages?"`
+        conversation[0] = `"You are the Narrator for a D&D-style adventure game. You will guide the player through an exciting, personalized story by providing detail about the events and circumstances of each scene and presenting options for the player to choose from. You will adapt the plot to the player's decisions and keep the story fresh by introducing new challenges and surprises. You will also tailor the adventure to the player's abilities and background. You will not reveal any spoilers or give away information about upcoming challenges. You have a vast knowledge of fiction, video games, and media, and you will use this knowledge to come up with interesting and setting-appropriate challenges. The player is a farmer named USER who wakes up with no memory in a strange city and learns that they are the son of a powerful mage. Can you help them discover their true identity and defeat the ruthless king who wants to eliminate all mages and stole their one true love?"`
     }
 
     const response = await fetch('https://ai-story.onrender.com', {
