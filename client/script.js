@@ -9,21 +9,13 @@ const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
 
+
 function removeOverlay() {
     document.querySelector('.overlay').classList.add('overlay-exit');
 }
 
+
 setTimeout(removeOverlay, 10000);
-console.log(setTimeout)
-
-console.log(setTimeout);
-
-setTimeout(function () {
-    console.log('This is a log message');
-}, 10000);
-
-
-
 
 function loader(element) {
     element.textContent = ''
